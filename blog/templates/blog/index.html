@@ -1,0 +1,22 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>my blog</title>
+</head>
+<body>
+    <h1>blog</h1>
+    <h2>안녕하세용</h2>
+    <br/>
+    <br/>
+    {% for post in posts %}
+        <div>
+            <h4>{{ post.title }}</h4>
+            <h4>{{ post.created_at }}</h4>
+            <h4>{{ post.content }}</h4>
+        </div>
+        <hr/>
+    {% endfor %}
+</body>
+</html>
