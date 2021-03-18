@@ -129,3 +129,5 @@ dmypy.json
 # idea는 파이참에서 자동으로 생성하는 파일
 .pyre/
 .idea/
+
+migrations/
