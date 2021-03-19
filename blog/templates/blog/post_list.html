@@ -12,7 +12,7 @@
     <br/>
 
     {% for post in post_list %}
-        <div class="card mb-5" style="
+        <div class="card mb-5" id="post-{{ post.pk }}" style="
             width: 600px;
             margin-left: 100px;
             margin-right: auto
@@ -25,6 +25,11 @@
             {% endif %}
 
             <div class="card-body">
+                {% if post.category %}
+                    <span class="badge badge-secondary float-right">{{ post.category }}</span>
+                {% else %}
+                    <span class="badge badge-secondary float-right">미 분류</span>
+                {% endif %}
                 <h2 class="card-title">{{ post.title }}</h2>
                 {% if post.hook_text %}
                     <h6 class="text-muted">{{ post.hook_text }}</h6>
@@ -36,7 +41,7 @@
             </div>
             <div class="card-footer text-muted">
                 Posted on {{ post.created_at }} by
-                <a href="#">작성자 위치</a>
+                <a href="#">{{ post.author | upper }}</a>
             </div>
         </div>
     {% endfor %}

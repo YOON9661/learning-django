@@ -7,12 +7,18 @@
 {% block main_area %}
         <div id="post-area">
             <h1 class="mt-4">{{ post.title }}</h1>
+            {% if post.category %}
+                <span class="badge badge-secondary float-right">{{ post.category }}</span>
+            {% else %}
+                <span class="badge badge-secondary float-right">미분류</span>
+            {% endif %}
+
             {% if post.hook_text %}
                 <h6 class="text-muted">{{ post.hook_text }}</h6>
             {% endif %}
             <p class="lead">
                 by
-                <a href="#">작성자 명(개발예정)</a>
+                <a href="#">{{ post.author | upper }}</a>
             </p>
             <p>posted on {{ post.created_at }}</p>
             <hr/>
