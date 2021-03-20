@@ -46,7 +46,7 @@
                 {% endif %}
                 <br />
                 <!-- truncatechars : 글자몇개에서 자르기 -->
-                <p class="card-text">{{ post.content | truncatechars:100 }}</p>
+                <p class="card-text">{{ post.get_content_markdown | truncatewords_html:45 | safe }}</p>
                 {% if post.tags.exists %}
                     <span class="badge badge-secondary" style="padding: 5px">Tag</span>
                     {% for tag in post.tags.iterator %}
