@@ -1,17 +1,144 @@
 <!DOCTYPE>
+{% load static %}
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>초짜 개발자 윤지원</title>
-</head>
-<body>
-    <nav>
-        <a href="/blog/">Blog</a>
-        <a href="/about_me/">About me</a>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <title>초짜 개발자 윤지원</title>
+        <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+        <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous">
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous">
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+            integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+            crossorigin="anonymous">
+        </script>
+        <script src="https://kit.fontawesome.com/d730471275.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
 
-    <h1>안녕하세요 윤지원입니다</h1>
-    <h2>이력</h2>
-    <h3>포트폴리오</h3>
-</body>
+        {% include 'blog/navbar.html' %}
+
+        <section>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <br/>
+                        <h1>초짜 개발자 윤지원 입니다</h1>
+                        <hr />
+                        <p class="lead">
+                            2020년 12월 18일부터 지금까지 코딩을 해오는 중입니다.
+                            <br/>
+                            JS, JAVA, PHP, PYTHON 몽땅 배우는 중입니다.
+                            <br />
+                            모든 프로그래밍 언어가 재밌지만
+                            <br />
+                            특히 JS를 가장 좋아하고,
+                            <br />
+                            React, Express 로 웬만한 사이트는 다 만들 수 있을 것 같습니다.
+                        </p>
+                        <hr />
+                        <ul>
+                            <li>WORK EXPERIENCE</li>
+                            <ul>
+                                <li>2020년 12월 18일 부터 코딩시작</li>
+                                <li>React로 유튜브, 트위터, 인스타 클론 쌉가능</li>
+                                <li>장고, 라라벨, 스프링 배우려고 언어 기초 배우는 중</li>
+                            </ul>
+                            <li>EDUCATION</li>
+                            <ul>
+                                <li>울산스포츠과학고등학교(체육고) 졸업(2017.03.02 ~ 2020.02.11)</li>
+                                <li>회계학과, 단국대학교(2020.03.02 ~)</li>
+                                <li>이제 대학교 1학년 수료해서 뭐 없음 ㅋ</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <img class="img-fluid" style="height: 450px; margin-top: 40px;" src="{% static 'single_pages/images/eugene-chystiakov-wcMysLw5ROM-unsplash.jpg' %}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br />
+
+        <section class="bg-light margin-for-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <br />
+                        <h1>PORTFOLIO</h1>
+                        <br />
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img src="{% static 'single_pages/images/유튜브2.PNG' %}" style="height: 250px" alt="youtube" class="card-img-top">
+                            <div class="card-body" style="height: 310px;">
+                                <h5 class="card-title">유튜브 클론</h5>
+                                <br />
+                                <p>
+                                    강의보다가 이정도면 그냥 내가 혼자 해도 될 듯
+                                    생각하고 만든 인생 첫 개인 플젝.
+                                    <br/>
+                                    믈론 효율적인 코드라기 보단 어떻게든 돌아가게만 만든 작품이라
+                                    리덕스 컨셉 개무시한게 좀 마음에 걸림
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img src="{% static 'single_pages/images/트위터3.PNG' %}" style="height: 250px" alt="twitter" class="card-img-top">
+                            <div class="card-body" style="height: 310px;">
+                                <h5 class="card-title">트위터 클론</h5>
+                                <br />
+                                <p>
+                                    트위터 직접 만들어봄, 리트윗도 가능 근데
+                                    <br />
+                                    시퀄라이즈 데이터베이스 짜는게 좀 어려웠음
+                                    <br />
+                                    물론 요때는 리덕스로 상태관리 깔끔하게 함
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <img src="{% static 'single_pages/images/텐서플로우.PNG' %}" style="height: 250px" alt="tensorflow" class="card-img-top">
+                            <div class="card-body" style="height: 310px;">
+                                <h5 class="card-title">머신러닝 할 줄 앎</h5>
+                                <br />
+                                <p>
+                                    시작부터 파이썬을 텐서플로우로 접하는 상남자 코스를 밟음
+                                    <br />
+                                    문과생인데 솔직히 텐서플로우 관련 책 읽는거 바로바로 이해 됨
+                                    <br />
+                                    미분방법이랑 벡터개념때문에 이과수학도 독학함.(물론 깊은 내용까진 x)
+                                    <br />
+                                    개, 고양이 분류 모델, LSTM도 케라스로 직접 짜봄
+                                    <br />
+                                    케라스는 최상위 API 답게 진짜 졸라 쉬움
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+            {% include 'blog/footer.html' %}
+
+    </body>
 </html>
