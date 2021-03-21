@@ -21,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zh^p=89r(9#3oxtnyc$7ma!%$#d33jq7vro(#m!j5^@2-9*cy%'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'zh^p=89r(9#3oxtnyc$7ma!%$#d33jq7vro(#m!j5^@2-9*cy%')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get('DEBUG', 1))
 
-ALLOWED_HOSTS = []
+if os.environ.get('DJANGO_ALLOWED_HOSTS'):
+    ALLOWED_HOST = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
+else:
+    ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -66,7 +69,7 @@ ROOT_URLCONF = 'do_it_django_prj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['tmeplates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
